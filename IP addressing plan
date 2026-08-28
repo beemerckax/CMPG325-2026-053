@@ -1,1 +1,85 @@
+The client's allocated address block is 192.168.31.0/24. We can divide this into smaller subnets to separate users and services.
+4.1 Subnetting plan
+
+Network	Network Address
+	Prefix
+	Subnet Mask
+	Usable Host Range
+	Broadcast
+
+Administration
+	192.168.31.0	/27
+	255.255.255.224
+	192.168.31.1–30
+	192.168.31.31
+
+Staff	192.168.31.64
+	/27
+	255.255.255.224
+	192.168.31.65–94
+	192.168.31.95
+
+Contractor Wi-Fi	192.168.31.96
+	/27
+	255.255.255.224
+	192.168.31.97–126
+	192.168.31.127
+
+Public Kiosk	192.168.31.128
+	/27
+	255.255.255.224
+	192.168.31.129–158
+	192.168.31.159
+
+R1–R2 link	192.168.31.160
+	/30
+	255.255.255.252
+	192.168.31.161–162
+	192.168.31.163
+
+R2–R3 link	192.168.31.164
+	/30
+	255.255.255.252
+	192.168.31.165–166
+	192.168.31.167
+
+R1–R3 link	192.168.31.168	/30	255.255.255.252	192.168.31.169–170	192.168.31.171
+					
+
+This leaves additional address space from the original /24 available for future expansion
+4.2 Device addressing
+R1:  Main Router
+Interface		
+	IP Address	Purpose
+LAN	
+	192.168.31.1/27	
+	Administration gateway
+
+Kiosk LAN		
+		
+			192.168.31.129/27	Public Kiosk gateway
+R1–R2	192.168.31.161/30	Link to R2
+R1–R3	192.168.31.169/30	Link to R3
+
+
+R2: Staff Router
+Interface	IP Address	Purpose
+LAN	192.168.31.65/27	Staff gateway
+Contractor Wi-Fi	192.168.31.97/27	Contractor gateway
+R1–R2	192.168.31.162/30	Link to R1
+R2–R3	192.168.31.165/30	Link to R3
+
+R3: Edge Router
+Interface	IP Address	Purpose
+R2–R3	192.168.31.166/30	Link to R2
+R1–R3	192.168.31.170/30	Link to R1
+Internet side	Simulated external network	Internet connection
+
+ End-Device IP Addressing
+Device
+	IP Address	Subnet Mask	Default Gateway
+Admin PC	192.168.31.10	255.255.255.224	192.168.31.1
+Staff PC	192.168.31.70	255.255.255.224	192.168.31.65
+Contractor Laptop	192.168.31.100	255.255.255.224	192.168.31.97
+Public Kiosk	192.168.31.130	255.255.255.224	192.168.31.129
 
