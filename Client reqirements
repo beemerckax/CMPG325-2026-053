@@ -1,1 +1,47 @@
+1.1 Client information
+Item	Details
+Organisation	Mothusi Bed & Breakfast (Potchefstroom)
+Industry		Hospitality
+Client ID		CL-053
+Project ID		CMPG325-2026-053
+Addressing block		192.168.31.0/24
+Network simulation		Cisco Packet Tracer
+Assigned challenge	
+	Static Routing (multi-router path control)
+Design constraint		After-hours cleaning and security contractors need limited wireless access
+Change request		CR13: Public self-service kiosk at reception with internet-only access
+
+
+1.2 Functional requirements
+•	Ensure the staff and administrative operations of the B&B have dependable connectivity.
+•	Encourage communication between the necessary network segments.
+•	When necessary, offer wireless connectivity.
+•	After-hours security and cleaning contractors should have restricted wireless access.
+•	At the front desk, set up a self-service kiosk for the public.
+•	Make sure the public kiosk is isolated from internal resources and provides internet-only access.
+•	Make use of the 192.168.31.0/24 address block that has been assigned.
+•	To show the given static-routing difficulty, use multiple routers.
+•	Permit effective communication between the relevant internal networks.
+•	Be created and replicated using Cisco Packet Tracer.
+•	Permit testing and documentation of connectivity and configuration.
+
+
+1.3 Security requirements
+The network should:
+•	Keep public access to internal staff materials separate.
+•	Stop internal networks from being accessed by the public reception kiosk.
+•	Limit contractors' wireless access to only the tools they need to do their jobs.
+•	Refrain from granting unlimited access to the internal network to contractors working after hours.
+•	To facilitate access control, employ distinct IP subnets for various user and device types.
+
+1.4 Performance and Reliability Requirements
+The network should:
+•	Establish dependable connectivity between the various network segments.
+•	Make use of a structured IP addressing scheme.
+•	Make sure there is a clear channel between routers.
+•	To manage network traffic, use static routes.
+•	Be simple to troubleshoot and extend if needed.
+
+1.5 Change Request CR13
+The client has requested:  A public self-service kiosk is installed at reception with internet-only access. The kiosk will therefore be placed on a separate kiosk network. It will not be placed on the same network as administration or staff devices.
 
